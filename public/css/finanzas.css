@@ -1,0 +1,270 @@
+/*
+ * Identidad visual de Finanzas. Se carga después de styles.css (SB Admin)
+ * para que el módulo no se vea como PCLAP: barra lateral clara, petróleo en vez de azul
+ * e IBM Plex Sans en vez de la fuente del sistema.
+ */
+
+:root {
+    --fin-petroleo-oscuro: #0f4c5c;
+    --fin-petroleo: #0f766e;
+    --fin-petroleo-hover: #0b5f58;
+    --fin-petroleo-suave: #e3f1ef;
+    --fin-grafito: #1f2933;
+    --fin-gris: #52606d;
+    --fin-fondo: #f3f6f6;
+    --fin-borde: #dde5e4;
+
+    --bs-body-font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --bs-body-color: var(--fin-grafito);
+    --bs-body-bg: var(--fin-fondo);
+    --bs-primary: #0f766e;
+    --bs-primary-rgb: 15, 118, 110;
+    --bs-link-color: #0f766e;
+    --bs-link-hover-color: #0f4c5c;
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+    color: var(--fin-grafito);
+    background-color: var(--fin-fondo);
+}
+
+/* Montos y números alineados en columna */
+table,
+.cifra {
+    font-variant-numeric: tabular-nums;
+}
+
+h1 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+a {
+    color: var(--fin-petroleo);
+}
+
+a:hover {
+    color: var(--fin-petroleo-oscuro);
+}
+
+:focus-visible {
+    outline: 2px solid var(--fin-petroleo);
+    outline-offset: 2px;
+}
+
+/* ===== Barra superior ===== */
+.sb-topnav.barra-superior {
+    background-color: var(--fin-petroleo-oscuro);
+}
+
+.barra-superior .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.barra-superior .btn-link,
+.barra-superior .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.barra-superior .btn-link:hover,
+.barra-superior .nav-link:hover {
+    color: #fff;
+}
+
+.logo-finanzas {
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* ===== Barra lateral clara ===== */
+#layoutSidenav #layoutSidenav_nav .sb-sidenav-light {
+    background-color: #fff;
+    border-right: 1px solid var(--fin-borde);
+}
+
+/* Mismo selector que SB Admin (más específico que .sb-sidenav-menu-heading) para quitar sus MAYÚSCULAS */
+.sb-sidenav.sb-sidenav-light .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
+    padding: 1.5rem 1rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--fin-gris);
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link {
+    margin: 0.1rem 0.6rem;
+    padding: 0.55rem 0.6rem;
+    border-radius: 0.5rem;
+    color: var(--fin-grafito);
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+    color: var(--fin-gris);
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link:hover {
+    color: var(--fin-petroleo-oscuro);
+    background-color: var(--fin-fondo);
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active {
+    color: var(--fin-petroleo-oscuro);
+    background-color: var(--fin-petroleo-suave);
+    font-weight: 600;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+    color: var(--fin-petroleo);
+}
+
+.sb-sidenav-light .sb-sidenav-footer {
+    background-color: #fff;
+    border-top: 1px solid var(--fin-borde);
+    color: var(--fin-grafito);
+}
+
+/* ===== Botones y formularios ===== */
+.btn-primary {
+    --bs-btn-bg: #0f766e;
+    --bs-btn-border-color: #0f766e;
+    --bs-btn-hover-bg: #0b5f58;
+    --bs-btn-hover-border-color: #0b5f58;
+    --bs-btn-focus-shadow-rgb: 15, 118, 110;
+    --bs-btn-active-bg: #0f4c5c;
+    --bs-btn-active-border-color: #0f4c5c;
+    --bs-btn-disabled-bg: #0f766e;
+    --bs-btn-disabled-border-color: #0f766e;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #0f766e;
+    --bs-btn-border-color: #0f766e;
+    --bs-btn-hover-bg: #0f766e;
+    --bs-btn-hover-border-color: #0f766e;
+    --bs-btn-focus-shadow-rgb: 15, 118, 110;
+    --bs-btn-active-bg: #0f4c5c;
+    --bs-btn-active-border-color: #0f4c5c;
+}
+
+.btn-link {
+    --bs-btn-color: #0f766e;
+    --bs-btn-hover-color: #0f4c5c;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6fb3ab;
+    box-shadow: 0 0 0 0.25rem rgba(15, 118, 110, 0.2);
+}
+
+.page-link {
+    color: var(--fin-petroleo);
+}
+
+.active > .page-link,
+.page-link.active {
+    background-color: var(--fin-petroleo);
+    border-color: var(--fin-petroleo);
+}
+
+/* ===== Tarjetas ===== */
+.card {
+    border-color: var(--fin-borde);
+}
+
+.card-header {
+    background-color: #fff;
+    font-weight: 500;
+}
+
+.breadcrumb-item a {
+    color: var(--fin-petroleo);
+}
+
+/* Indicadores del panel: tarjeta blanca con el color en el borde, no un bloque de color */
+.indicador {
+    position: relative;
+    height: 100%;
+    padding: 1.25rem 1.25rem 1rem;
+    border: 1px solid var(--fin-borde);
+    border-top: 4px solid var(--indicador-color, var(--fin-petroleo));
+    border-radius: 0.5rem;
+    background-color: #fff;
+}
+
+.indicador-valor {
+    margin-top: 0.25rem;
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--indicador-color, var(--fin-petroleo));
+    font-variant-numeric: tabular-nums;
+}
+
+.indicador-enlace {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* ===== Login: papel de libro contable sobre petróleo ===== */
+.login-finanzas {
+    min-height: 100vh;
+    background-color: var(--fin-petroleo-oscuro);
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 31px,
+        rgba(255, 255, 255, 0.07) 31px,
+        rgba(255, 255, 255, 0.07) 32px
+    );
+}
+
+.login-finanzas .login-tarjeta {
+    border: 0;
+    border-radius: 0.75rem;
+    box-shadow: 0 1.5rem 3rem rgba(4, 30, 36, 0.35);
+}
+
+.login-marca {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+}
+
+.login-marca .logo-finanzas {
+    width: 3rem;
+    height: 3rem;
+}
+
+.login-marca-nombre {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.login-marca-detalle {
+    margin: 0.25rem 0 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+}
+
+footer.bg-light {
+    background-color: #fff !important;
+    border-top: 1px solid var(--fin-borde);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #layoutSidenav #layoutSidenav_nav {
+        transition: none;
+    }
+}
